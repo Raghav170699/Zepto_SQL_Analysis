@@ -16,6 +16,46 @@ This project involves end-to-end data exploration, cleaning, and business analys
 
 ---
 
+## 📌 Project Workflow
+
+This project simulates a real-world SQL-based analysis workflow using messy e-commerce inventory data. The process includes database setup, cleaning, and extracting business insights from structured queries.
+
+### 1️⃣ **Database Setup**
+- Created the `zepto` table with structured schema:
+  - Columns for SKU ID, category, product name, MRP, discount %, availability, and weight
+- Used appropriate data types (`NUMERIC`, `INTEGER`, `BOOLEAN`, etc.)
+
+### 2️⃣ **Initial Data Exploration**
+- Previewed sample records (`LIMIT 10`)
+- Identified:
+  - Missing values using `IS NULL` checks
+  - Duplicate product names
+  - Unique product categories
+- Assessed stock status by grouping `outOfStock`
+
+### 3️⃣ **Data Cleaning**
+- Removed entries with `MRP = 0` or `discountedSellingPrice = 0`
+- Converted all prices from **paise to rupees**
+- Ensured consistency across pricing and weight columns
+
+### 4️⃣ **Business Analysis Using SQL**
+
+#### 📌 Value and Pricing Insights:
+- Top 10 **best value products** by discount percentage
+- Filtered **MRP > ₹500 with minimal discounts**
+- Calculated **price per gram** to highlight value-for-money items
+
+#### 🛒 Inventory Insights:
+- Flagged **high-MRP out-of-stock products**
+- Measured **total inventory weight per category**
+- Grouped products into **Low, Medium, Bulk** based on weight
+
+#### 📈 Revenue Insights:
+- Estimated **potential revenue** for each product category
+- Ranked **top 5 categories** with highest average discount %
+
+---
+
 ## 🔍 Key Business Insights
 
 - 🏷️ **Identified top 10 best-value products** based on discount percentage  
